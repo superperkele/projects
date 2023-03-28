@@ -3,8 +3,8 @@ site_name: Protoni's site
 # Set material theme settings
 theme:
   name: material
-  logo: ./ohYouDogRound.PNG
-  favicon: ./ohYouDogRound.PNG
+  logo: assets/images/ohYouDogRound.PNG
+  favicon: assets/images/ohYouDogRound.PNG
   features:
 #    - navigation.tabs
     - navigation.indexes

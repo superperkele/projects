@@ -3,8 +3,8 @@ site_name: Protoni's site
 # Set material theme settings
 theme:
   name: material
-  logo: ./assets/ohYouDogRound.PNG
-  favicon: ./assets/ohYouDogRound.PNG
+  logo: ./ohYouDogRound.PNG
+  favicon: ./ohYouDogRound.PNG
   features:
 #    - navigation.tabs
     - navigation.indexes
@@ -36,6 +36,7 @@ theme:
 # Set plugins
 plugins:
   - glightbox
+  - search
 
 # Use custom css
 extra_css:

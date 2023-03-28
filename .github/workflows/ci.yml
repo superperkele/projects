@@ -10,6 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - run: git lfs checkout
       - uses: actions/checkout@v3
         with:
           lfs: true
@@ -20,7 +21,6 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
-      - run: git lfs checkout
       - run: pip install mkdocs-glightbox
       - run: pip install mkdocs-material 
       - run: mkdocs gh-deploy --force

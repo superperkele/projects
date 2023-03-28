@@ -1,6 +1,6 @@
 # Test page
 
-![text here](./elaintarha.PNG)
+![text here](elaintarha.png)
 
 Code block:
 ```

@@ -56,38 +56,6 @@ electron-builder -p --win
 Use the #1 method and then create a portable .exe from the output build folder
 ````
 
-
-##### GIT notes
-````bash
-Configs:
-git config --global user.name "Firstname Lastname"
-git config --global user.email "your_email@example.com"
-mkdir git
-git init
-
-# Ssh-keys:
-ssh-keygen -t rsa -C "your_email@example.com"
-githubista -> settings -> SSH and GPG keys -> new key -> tonne public key
-
-# Ssh testi:
-ssh -T git@github.com
-
-# Push test:
-touch test.txt
-git add .
-git commit -m "First commit"
-
-#Connect to github repo:
-git remote add origin git@github.com:user/repo_name.git
-git push origin master 
-(if it doesn't work, then):
-git pull --rebase origin master
-git push origin master
-
-# Remove git init (master branch):
- rm -rf .git
-````
-
 ##### MuroBBS notes
 ````bash
 # Add embedded imgur image to muroBBS forum:
@@ -95,15 +63,6 @@ git push origin master
 
 # Add embedded imgur image gallery to muroBBS forum:
 [MEDIA=imgur]a/kaD578M[/MEDIA]
-````
-
-##### Notepadpp notes
-````bash
-# Replace tabs with spaces
-Settings -> Language -> Tab Settings -> Replace by space and Tab size: 4
-
-# Show hidden characters ( spaces and tabs )
-View -> Show Symbol -> show White Space and TAB
 ````
 
 ##### Trello notes
@@ -315,4 +274,114 @@ GRANT USAGE ON *.* TO root@localhost IDENTIFIED BY 'PUT_PW_HERE';
 GRANT ALL PRIVILEGES ON Storage.* TO root@localhost;
 
 # 17. 
+````
+
+### WebOS notes ( SmartTV app programming )
+````bash
+# Build
+ares-package aasi-app
+
+# Install package
+ares-install --device tv2 ./com.aasi.app.aasiapp_0.0.1_all.ipk
+
+# List installed packages
+ares-install --device tv2 --list
+
+# Launch app
+ares-launch --device tv2 com.aasi.app.aasiapp
+
+# Close app
+ares-launch --device tv2 --close com.aasi.app.aasiapp
+````
+
+### BatMUD
+````bash
+# Show inventory:
+i
+
+# Show equipment
+eq
+
+# Search info:
+hfind
+( Example: hfind armours )
+
+# Run away:
+wimpy now
+
+# Show health:
+sc
+
+# Show player info
+score
+
+# Show experience and money
+exp
+
+# Show info on players
+finger
+( Example: finger protoni )
+
+# Look around and items
+look scenery
+
+# Dwarf mountain wizard password
+kalacucco
+
+
+
+# Newbie help:
+help newbie helpers
+
+# teleport?
+touch post
+
+# Levelup:
+advance level
+
+# Check levelup cost:
+advance cost
+
+# Adventurer guild locations:
+Dortlewall, Pleasantville, Arelium and Calythien
+
+# At lvl 16:
+help free levels
+
+# Lots of rooms ( exp ):
+wane-mountain
+
+# Good starter items:
+Dortwall 'crystite credits' 
+
+# Cheap items:
+Damogran's warehouse
+- Located 1 east, 2 north from the church altar, and there's a portal to his warehouse in Dortlewall and Pleasantville
+````
+
+### Rust
+````bash
+# Update rustc, cargo etc..
+rustup update stable
+
+# Error: specified package has no binaries
+cargo install cargo-edit
+cargo add pdb
+
+# Start a new project
+mkdir test_project
+cd test_project
+cargo init
+
+# Run project
+cargo run
+
+# Build project without running
+carco build
+
+# Create a release
+cargo build --release
+
+# Generate docs based on dependencies
+cargo doc --open
 ````

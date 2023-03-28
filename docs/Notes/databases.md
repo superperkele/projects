@@ -137,4 +137,9 @@ Stored Connection: STORED_CONNECTION_HERE
 Connection Method: Standard(TCP/IP)
 ````
 
+##### Compare two different mysqldump files
+````bash
+if [[ $(ls -A | diff TEST3.sql TEST4.sql | grep 'INSERT') ]]; then echo 1; else echo 0; fi
+````
+
 ---

@@ -69,5 +69,5 @@ markdown_extensions:
 extra:
   generator: false
 
-# Set copyright text
-copyright: Copyright &copy; 2023 Protoni
+# Set copyright text + contant info ( address encoded with email encoder)
+copyright: Copyright &copy; 2023-> Protoni. Contant at &#116;&#111;&#110;&#105;&#032;[&#064;]&#032;&#112;&#114;&#111;&#116;&#111;&#110;&#105;&#046;&#102;&#105;

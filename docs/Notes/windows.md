@@ -503,3 +503,77 @@ app.listen(8080);
 console.log("Running in port 8080");
 ####################################
 ````
+
+##### Setup SSH keys
+````powershell
+## Example: Add ssh keys to github
+
+# Create a key pair
+ssh-keygen
+
+# Add public key to github
+Profile -> settings -> ssh keys -> new key -> past *.pub here
+
+# Add private key to correct location ( name has to be id_rsa )
+C:/Users/username/.ssh/id_rsa
+
+# Add key to key agent
+Open windows terminal
+start-ssh-agent.cmd
+````
+
+##### Onenote
+````powershell
+# Create a new quick note shortcut
+Win + Alt + N
+````
+
+##### Media streaming
+````powershell
+Control Panel\Network and Internet\Network and Sharing Centre\Media streaming options
+````
+
+##### Install WSL to Non system drive ( not C:\ )
+````powershell
+- Win button -> Search for 'powershell' -> Ctrl + Shift + Enter
+- cd G:\
+- mkdir WSL
+- cd WSL
+- See distros here: https://docs.microsoft.com/en-us/windows/wsl/install-manual
+- iwr -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing
+- move .\Ubuntu.appx .\Ubuntu.zip
+- Expand-Archive .\Ubuntu.zip
+- cd Ubuntu
+- .\ubuntu1804.exe
+- Create username and password
+````
+
+##### View current WSL virtual drive size
+````powershell
+- Win button -> Search for 'powershell' -> Ctrl + Shift + Enter
+- diskpart
+- Select vdisk file="G:\Ubuntu-20-04_wsl\ubuntu-1804\ext4.vhdx"
+- detail vdisk
+````
+
+##### Resize WSL virtual drive
+````powershell
+1. Increase virtual disk space
+- Win button - Search for "Turn Windows features on or off" -> Hyper-V -> Tick on
+- Win button -> Search for 'powershell' -> Ctrl + Shift + Enter
+- cd to the location of virtual drive ( ext4.vhdx )
+- resize-vhd -Path .\ext4.vhdx -SizeBytes 326GB
+- Another way: https://docs.microsoft.com/en-us/windows/wsl/compare-versions#expanding-the-size-of-your-wsl-2-virtual-hard-disk
+2. Increase physical disk space on linux
+# This can cause error: "/dev: none already mounted on /dev.". just ignore.
+- sudo mount -t devtmpfs none /dev
+# Check output e.g. /dev/sdb
+- mount | grep ext4
+# Give the size in megabytes
+- sudo resize2fs /dev/sdb 376000M
+````
+
+##### Open another instance of a application
+````powershell
+Hover over an application in the toolbar and press Shift + Left mouse click
+````

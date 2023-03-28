@@ -2,3 +2,6 @@
     visibility: hidden;
 }
 
+.md-logo {
+  content: url("../assets/images/ohYouDogRound48.png");
+}

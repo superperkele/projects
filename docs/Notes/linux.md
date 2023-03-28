@@ -113,6 +113,15 @@ cat file | tee -a log | cat > /dev/null
 
 # bonus: exit terminal but leave all processes running
 disown -a && exit
+
+## Search for a phrase in text file and get the tailing and heading lines aswell
+# get line number
+$ cat /var/log/messages | grep -n "text_to_search" | cut -f1 -d:
+1533
+
+# Get +-10 lines near "text_to_search"
+$ sed -n '1523,1543p' /var/log/messages
+
 ````
 
 ##### Linux GRUB
@@ -215,13 +224,6 @@ exec bash /home/pi/gwtest/startupScript.sh
 ##### Linux shell
 ````bash
 --------------------------------------------------------------------------------------------
-
-# Compare two different mysqldump files.
-if [[ $(ls -A | diff TEST3.sql TEST4.sql | grep 'INSERT') ]]; then echo 1; else echo 0; fi
-
---------------------------------------------------------------------------------------------
-
-# Search for a phrase in text file and get the tailing and heading lines aswell
 
 
 # get line number
@@ -354,4 +356,38 @@ sudo dd if=/dev/zero of=/dev/sda
 
 # more privacy way
 sudo dd if=/dev/urandom of=/dev/sda
+````
+
+##### Add sudo capable user
+````bash
+useradd ton
+passwd ton
+usermod -aG sudo ton
+sudo chown $(whoami) ~
+````
+
+##### Add sudo capable user
+````bash
+# Arrow keys, Home, End, tab-complete keys not working in shell
+1. chsh -s /bin/bash
+2. Re-log
+````
+
+##### Arch linux quick install
+````bash
+cfdisk -> dos -> new -> 20G -> primary -> Linux (83) -> quit -> yes
+mkfs.xfs /dev/sda1
+mount /dev/sda1 /mnt
+pacman -Sy tmux
+tmux
+pacstarp /mnt base linux
+arch-chroot /mnt -> passwd
+Ctrl + D
+genfstab /mnt>/mnt/etc/fstab;arch-chroot /mnt bash -c 'pacman -Sy grub;grub-install /dev/sda;grub-mkconfig -o /boot/grub/grub.cfg';reboot
+````
+
+##### Linux GRUB
+````bash
+# Parse images to text
+curl -s 'https://pbs.twimg.com/media/E9T96Q9XIAcs8xJ?format=jpg&name=large' -o - | tesseract stdin stdout | grep --color 609
 ````

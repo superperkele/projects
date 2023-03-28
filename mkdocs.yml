@@ -1,10 +1,17 @@
-site_name: Personal Projects
+site_name: Protoni's site
+
+# Set material theme settings
 theme:
   name: material
+  logo: assets/ohYouDogRound.PNG
+  favicon: assets/ohYouDogRound.PNG
   features:
 #    - navigation.tabs
+    - navigation.indexes
+#    - navigation.instant
 #    - navigation.sections
 #    - toc.integrate
+#    - navigation.footer
     - navigation.top
     - search.suggest
     - search.highlight
@@ -26,6 +33,15 @@ theme:
       primary: indigo
       accent: lime
 
+# Set plugins
+plugins:
+  - glightbox
+
+# Use custom css
+extra_css:
+  - stylesheets/styles.css
+
+# Set md extensions
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -43,3 +59,10 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+
+# Remove default copyright text
+extra:
+  generator: false
+
+# Set copyright text
+copyright: Copyright &copy; 2023 Protoni

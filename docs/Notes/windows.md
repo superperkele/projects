@@ -1,36 +1,5 @@
 
 
-##### Setup FTP connection on Visual studio code
-````powershell
-# Setup FTP connection.
-1. Install FTP-simple
-2. modify config-file ( press F1 -> ftp-simple: config - FTP settings )
-[
-    {
-        "name": "raspberry pi",
-        "host": "192.168.1.35",
-        "port": 22,
-        "type": "sftp",
-        "username": "USERNAME_HERE",
-        "password": "",
-        "promptForPass": false,
-        "path": "/home/USERNAME_HERE/",
-        "autosave": true,
-        "confirm": false,
-        "readyTimeout": 99999,
-        "privateKey": "C:\\path\\to\\ssh\\private_key.ppk",
-        "passphrase": "SSH_KEY_PASSWORD_HERE"
-    }
-]
-
-3. Usage: Press F1 -> ftp-simple: Remote - remote directory open to workspace
-
-# Show white spaces:
-View -> Render Whitespace
-````
-
-
-
 ##### Check checksum
 ````powershell
 # SHA256
@@ -39,8 +8,6 @@ CertUtil -hashfile file_to_check.exe SHA256
 # MD5
 CertUtil -hashfile file_to_check.exe MD5
 ````
-
-
 
 ##### Check signatures
 ````powershell

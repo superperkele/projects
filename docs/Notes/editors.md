@@ -14,7 +14,7 @@ Ctrl + Shift + Alt + m
 Plugins -> MIME tools -> Base64 decode
 ````
 
-##### Notepad++ notes
+##### Vim
 ````bash
 # Create vim config file
 1. vim ~/.vimrc
@@ -80,4 +80,33 @@ Console (/SUBSYSTEM:CONSOLE)
 3. Create lib folder and put the .lib in here
 4. Add lib files to Linker -> General -> Additional Library Directories
 5. Add assimp.lib to Linker -> Input -> Additional Dependencies
+````
+
+##### Setup FTP connection on Visual studio code
+````powershell
+# Setup FTP connection.
+1. Install FTP-simple
+2. modify config-file ( press F1 -> ftp-simple: config - FTP settings )
+[
+    {
+        "name": "raspberry pi",
+        "host": "192.168.1.35",
+        "port": 22,
+        "type": "sftp",
+        "username": "USERNAME_HERE",
+        "password": "",
+        "promptForPass": false,
+        "path": "/home/USERNAME_HERE/",
+        "autosave": true,
+        "confirm": false,
+        "readyTimeout": 99999,
+        "privateKey": "C:\\path\\to\\ssh\\private_key.ppk",
+        "passphrase": "SSH_KEY_PASSWORD_HERE"
+    }
+]
+
+3. Usage: Press F1 -> ftp-simple: Remote - remote directory open to workspace
+
+# Show white spaces:
+View -> Render Whitespace
 ````

@@ -6,7 +6,7 @@ theme:
   logo: assets/images/ohYouDogRound.PNG
   favicon: assets/images/ohYouDogRound.PNG
   features:
-#    - navigation.tabs
+    - navigation.tabs
     - navigation.indexes
 #    - navigation.instant
 #    - navigation.sections
@@ -37,6 +37,9 @@ theme:
 plugins:
   - glightbox
   - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
 
 # Use custom css
 extra_css:

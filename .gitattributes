@@ -1,2 +1,4 @@
 *.jpg filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
+docs/assets/images/*.png -filter=lfs -diff=lfs -merge=lfs -text
+docs/assets/images/*.PNG -filter=lfs -diff=lfs -merge=lfs -text

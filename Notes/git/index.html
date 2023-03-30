@@ -1,0 +1,840 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://protoni.github.io/projects/Notes/git/" rel="canonical"/>
+<link href="../editors/" rel="prev"/>
+<link href="../home-assistant/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.4" name="generator"/>
+<title>Git - Protoni's site</title>
+<link href="../../assets/stylesheets/main.240905d7.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../css/timeago.css" rel="stylesheet"/>
+<link href="../../stylesheets/styles.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="purple" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#config">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Protoni's site" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Protoni's site">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Protoni's site
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Git
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="purple" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="lime" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/protoni/projects" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    protoni/projects
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Protoni's site" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Protoni's site">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    Protoni's site
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/protoni/projects" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    protoni/projects
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Welcome
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Links
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Links
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Links/resources/">
+        Resources
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Links/tools/">
+        Tools
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../android/">
+        Android
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bash/">
+        Bash
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../cryptocurrency/">
+        Cryptocurrency
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../databases/">
+        Databases
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../editors/">
+        Editors
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Git
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#config">
+    Config
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup-ssh-keys">
+    Setup SSH keys
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-ssh-keys">
+    Test SSH keys
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#connect-to-git-repo">
+    Connect to git repo
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#delete-branches">
+    Delete branches
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rename-branches">
+    Rename branches
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fix-is-unmerged-error">
+    Fix 'is unmerged' error
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#clear-all-staged-files">
+    Clear all staged files
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#discard-local-changes-for-specific-file">
+    Discard local changes for specific file
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prevent-lf-clrf-line-breaks-change-on-one-repo">
+    Prevent LF -&gt; CLRF ( line breaks ) change on one repo
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#undo-a-merge-before-pushing">
+    Undo a merge before pushing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fix-failed-to-push-some-refs-to">
+    Fix 'Failed to push some refs to..'
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#undo-the-last-commit-before-pushing">
+    Undo the last commit before pushing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#discard-untracked-files">
+    Discard untracked files
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#delete-remote-file-keep-locally">
+    Delete remote file ( keep locally )
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#discard-changes">
+    Discard changes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#undo-last-local-commit">
+    Undo last local commit
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resolve-merge-conflicts">
+    Resolve merge conflicts
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#change-branch-name">
+    Change branch name
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#revert-to-specific-commit">
+    Revert to specific commit
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#delete-last-pushed-commit">
+    Delete last pushed commit
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#start-ssh-agent-on-linux">
+    Start SSH agent on Linux
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../home-assistant/">
+        Home assistant
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../linux/">
+        Linux
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../random/">
+        Random
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../web-dev/">
+        Web dev
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../windows/">
+        Windows
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_12" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
+          Electronics
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_12_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_12">
+<span class="md-nav__icon md-icon"></span>
+          Electronics
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../electronics/beaglebone/">
+        Beaglebone
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../electronics/electronics/">
+        Electronics
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../electronics/osd3358/">
+        Osd3358
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../electronics/raspberry-pi/">
+        Raspberry pi
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_13" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
+          Game dev
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_13_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_13">
+<span class="md-nav__icon md-icon"></span>
+          Game dev
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../game-dev/blender/">
+        Blender
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../game-dev/houdini/">
+        Houdini
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../game-dev/servers/">
+        Servers
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../game-dev/unreal-engine/">
+        Unreal engine
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Projects
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Projects
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Projects/git-pages/">
+        Git Pages
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../Projects/all-the-mods/">All the mods</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+          All the mods
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../Projects/install-arch-linux/">Install arch linux</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+          Install arch linux
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          Test pages
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+          Test pages
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Projects/test-pages/page2/">
+        Test page
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#config">
+    Config
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup-ssh-keys">
+    Setup SSH keys
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-ssh-keys">
+    Test SSH keys
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#connect-to-git-repo">
+    Connect to git repo
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#delete-branches">
+    Delete branches
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rename-branches">
+    Rename branches
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fix-is-unmerged-error">
+    Fix 'is unmerged' error
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#clear-all-staged-files">
+    Clear all staged files
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#discard-local-changes-for-specific-file">
+    Discard local changes for specific file
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prevent-lf-clrf-line-breaks-change-on-one-repo">
+    Prevent LF -&gt; CLRF ( line breaks ) change on one repo
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#undo-a-merge-before-pushing">
+    Undo a merge before pushing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fix-failed-to-push-some-refs-to">
+    Fix 'Failed to push some refs to..'
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#undo-the-last-commit-before-pushing">
+    Undo the last commit before pushing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#discard-untracked-files">
+    Discard untracked files
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#delete-remote-file-keep-locally">
+    Delete remote file ( keep locally )
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#discard-changes">
+    Discard changes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#undo-last-local-commit">
+    Undo last local commit
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resolve-merge-conflicts">
+    Resolve merge conflicts
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#change-branch-name">
+    Change branch name
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#revert-to-specific-commit">
+    Revert to specific commit
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#delete-last-pushed-commit">
+    Delete last pushed commit
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#start-ssh-agent-on-linux">
+    Start SSH agent on Linux
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/protoni/projects/edit/main/docs/Notes/git.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
+</a>
+<h1>Git</h1>
+<h5 id="config">Config</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Firstname Lastname"</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"your_email@example.com"</span>
+</code></pre></div>
+<h5 id="setup-ssh-keys">Setup SSH keys</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c"># TLDR github example:</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">ssh-keygen</span> <span class="n">-t</span> <span class="n">rsa</span> <span class="n">-C</span> <span class="s2">"your_email@example.com"</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="k">in</span> <span class="n">github</span> <span class="p">-&gt;</span> <span class="n">settings</span> <span class="p">-&gt;</span> <span class="n">SSH</span> <span class="n">and</span> <span class="n">GPG</span> <span class="n">keys</span> <span class="p">-&gt;</span> <span class="n">new</span> <span class="n">key</span> <span class="p">-&gt;</span> <span class="n">paste</span> <span class="n">public</span> <span class="n">key</span> <span class="n">here</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c"># Another way:</span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">https</span><span class="p">://</span><span class="n">confluence</span><span class="p">.</span><span class="n">atlassian</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">bitbucket</span><span class="p">/</span><span class="nb">set-up</span><span class="n">-an-ssh-key</span><span class="p">-</span><span class="n">728138079</span><span class="p">.</span><span class="n">html</span>
+</code></pre></div>
+<h5 id="test-ssh-keys">Test SSH keys</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+</code></pre></div>
+<h5 id="connect-to-git-repo">Connect to git repo</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:user/repo_name.git
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master<span class="w"> </span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="o">(</span><span class="k">if</span><span class="w"> </span>it<span class="w"> </span>doesn<span class="err">'</span>t<span class="w"> </span>work,<span class="w"> </span><span class="k">then</span><span class="o">)</span>:
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span>origin<span class="w"> </span>master
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master
+</code></pre></div>
+<h5 id="delete-branches">Delete branches</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># Delete remote branch</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>-d<span class="w"> </span>cleanup
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c1"># Delete local branch</span>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>cleanup
+</code></pre></div>
+<h5 id="rename-branches">Rename branches</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c"># Rename local and remote branch</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="c"># Example: rename master to old-master</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="n">git</span> <span class="n">branch</span> <span class="n">-m</span> <span class="n">old-master</span>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="p">:</span><span class="n">master</span> <span class="n">old-master</span>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">-u</span> <span class="n">old-master</span>
+</code></pre></div>
+<h5 id="fix-is-unmerged-error">Fix 'is unmerged' error</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1"># ton@ubuntu:~/work/git/test-repo$ git checkout -- .</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="c1"># error: path 'Dockerfile' is unmerged</span>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="c1"># error: path 'Makefile' is unmerged</span>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a>git<span class="w"> </span>reset<span class="w"> </span>Makefile
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a>git<span class="w"> </span>reset<span class="w"> </span>Dockerfile
+</code></pre></div>
+<h5 id="clear-all-staged-files">Clear all staged files</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>git<span class="w"> </span>restore<span class="w"> </span>--staged<span class="w"> </span>.
+</code></pre></div>
+<h5 id="discard-local-changes-for-specific-file">Discard local changes for specific file</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>path/to/file.cpp
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="c1"># This can resolve for example an issue when doing "git pull origin master" to </span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="c1"># feature branch: "Please commit your changes or stash them before you merge. ( Note: you will lose your changes )"</span>
+</code></pre></div>
+<h5 id="prevent-lf-clrf-line-breaks-change-on-one-repo">Prevent LF -&gt; CLRF ( line breaks ) change on one repo</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>git<span class="w"> </span>config<span class="w"> </span>--local<span class="w"> </span>core.autocrlf<span class="w"> </span><span class="nb">false</span>
+</code></pre></div>
+<h5 id="undo-a-merge-before-pushing">Undo a merge before pushing</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="m">1</span>.<span class="w"> </span>Check<span class="w"> </span>the<span class="w"> </span>commit<span class="w"> </span><span class="nb">hash</span><span class="w"> </span>with<span class="w"> </span>git<span class="w"> </span>reflog
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="c1">#Example:</span>
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="c1">#PS C:\work\git\example-branch&gt; git reflog</span>
+<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="c1">#576e60f (HEAD -&gt; master) HEAD@{1}: checkout: moving from feature-usb-support to master</span>
+<a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="c1">#4fa9e62 (origin/master, origin/HEAD) HEAD@{4}: checkout: moving from feature-usb-led-support to master</span>
+<a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="c1">#ca1499b (origin/feature-usb-led-support, feature-usb-led-support) HEAD@{5}: pull: Fast-forward</span>
+<a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="c1">#b1f3ab7 HEAD@{6}: checkout: moving from feature-usb-support to feature-usb-led-support</span>
+<a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="c1">#ead3f6e (origin/feature-usb-support, feature-usb-support) HEAD@{7}: checkout: moving from feature-usb-led-support to feature-usb-support</span>
+<a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="c1">#b1f3ab7 HEAD@{8}: pull: Fast-forward</span>
+<a href="#__codelineno-10-10" id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="c1">#fc2dced HEAD@{9}: checkout: moving from feature-usb-support to feature-usb-led-support</span>
+<a href="#__codelineno-10-11" id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="c1">#ead3f6e (origin/feature-usb-support, feature-usb-support) HEAD@{10}: commit: Set LED on when communicating with devices</span>
+<a href="#__codelineno-10-12" id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="c1">#83e438d HEAD@{11}: commit (merge): Merge LED handling changes.</span>
+<a href="#__codelineno-10-13" id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="c1">#4fa9e62 (origin/master, origin/HEAD) HEAD@{13}: checkout: moving from feature-usb-led-support to master</span>
+<a href="#__codelineno-10-14" id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="c1">#fc2dced HEAD@{14}: checkout: moving from feature-usb-support to feature-usb-led-support</span>
+<a href="#__codelineno-10-15" id="__codelineno-10-15" name="__codelineno-10-15"></a>
+<a href="#__codelineno-10-16" id="__codelineno-10-16" name="__codelineno-10-16"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>4fa9e62
+</code></pre></div>
+<h5 id="fix-failed-to-push-some-refs-to">Fix 'Failed to push some refs to..'</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>branch-name-here
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="c1"># Some git providers throw this error for example when trying to push a new branch</span>
+</code></pre></div>
+<h5 id="undo-the-last-commit-before-pushing">Undo the last commit before pushing</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># To undo and keep the changed made to files:</span>
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>git<span class="w"> </span>reset<span class="w"> </span>HEAD^
+<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="c1"># more? Error: Add " around HEAD^</span>
+<a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a>Error:<span class="w"> </span>git<span class="w"> </span>reset<span class="w"> </span><span class="s2">"HEAD^"</span>
+<a href="#__codelineno-12-5" id="__codelineno-12-5" name="__codelineno-12-5"></a>
+<a href="#__codelineno-12-6" id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="c1"># To undo and remove changes made to files:</span>
+<a href="#__codelineno-12-7" id="__codelineno-12-7" name="__codelineno-12-7"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD^
+<a href="#__codelineno-12-8" id="__codelineno-12-8" name="__codelineno-12-8"></a>
+<a href="#__codelineno-12-9" id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="c1"># To remove last two commits and file changes:</span>
+<a href="#__codelineno-12-10" id="__codelineno-12-10" name="__codelineno-12-10"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~2
+</code></pre></div>
+<h5 id="discard-untracked-files">Discard untracked files</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="c1"># List all:</span>
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a>git<span class="w"> </span>clean<span class="w"> </span>-n
+<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a>
+<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="c1"># Delete ( directories and files ):</span>
+<a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a>git<span class="w"> </span>clean<span class="w"> </span>-fd
+</code></pre></div>
+<h5 id="delete-remote-file-keep-locally">Delete remote file ( keep locally )</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>git<span class="w"> </span>rm<span class="w"> </span>--cached<span class="w"> </span>&lt;filename&gt;
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a>git<span class="w"> </span>rm<span class="w"> </span>--cached<span class="w"> </span>-r<span class="w"> </span>&lt;dir_name&gt;
+<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Removed folder from repository"</span>
+<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master
+</code></pre></div>
+<h5 id="discard-changes">Discard changes</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>--<span class="w"> </span>.
+</code></pre></div>
+<h5 id="undo-last-local-commit">Undo last local commit</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="c1"># Undo:</span>
+<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>git<span class="w"> </span>reset<span class="w"> </span>HEAD~
+<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>
+<a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="c1"># Example:</span>
+<a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Something terribly misguided"</span>
+<a href="#__codelineno-16-6" id="__codelineno-16-6" name="__codelineno-16-6"></a>git<span class="w"> </span>reset<span class="w"> </span>HEAD~
+<a href="#__codelineno-16-7" id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="s">&lt;&lt; edit file</span>s<span class="w"> </span>as<span class="w"> </span>necessary<span class="w"> </span>&gt;&gt;
+<a href="#__codelineno-16-8" id="__codelineno-16-8" name="__codelineno-16-8"></a>git<span class="w"> </span>add<span class="w"> </span>...
+<a href="#__codelineno-16-9" id="__codelineno-16-9" name="__codelineno-16-9"></a>git<span class="w"> </span>commit<span class="w"> </span>-c<span class="w"> </span>ORIG_HEAD
+</code></pre></div>
+<h5 id="resolve-merge-conflicts">Resolve merge conflicts</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="c1"># Example: conflict in merging feature branch 'io-sampler-optimizing' to 'develop' branch</span>
+<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="m">1</span>.<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>develop
+<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="m">2</span>.<span class="w"> </span>git<span class="w"> </span>pull
+<a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="m">3</span>.<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>io-sampler-optimizing
+<a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="m">4</span>.<span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>develop<span class="w">  </span><span class="c1"># this creates the conflict lines in local files</span>
+<a href="#__codelineno-17-6" id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="m">5</span>.<span class="w"> </span>Fix<span class="w"> </span>the<span class="w"> </span>conflicts
+<a href="#__codelineno-17-7" id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="m">6</span>.<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>.
+<a href="#__codelineno-17-8" id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="m">7</span>.<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Resolved merge conflicts."</span>
+<a href="#__codelineno-17-9" id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="m">8</span>.<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>io-sampler-optimizing
+<a href="#__codelineno-17-10" id="__codelineno-17-10" name="__codelineno-17-10"></a>
+<a href="#__codelineno-17-11" id="__codelineno-17-11" name="__codelineno-17-11"></a><span class="c1"># Some other tutorial:</span>
+<a href="#__codelineno-17-12" id="__codelineno-17-12" name="__codelineno-17-12"></a>https://confluence.atlassian.com/bitbucket/resolve-merge-conflicts-704414003.html
+</code></pre></div>
+<h5 id="change-branch-name">Change branch name</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="c1"># Rename your local branch.</span>
+<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a>
+<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="c1"># If you are on the branch you want to rename:</span>
+<a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a>git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span>new-name
+<a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a>
+<a href="#__codelineno-18-6" id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="c1"># If you are on a different branch:</span>
+<a href="#__codelineno-18-7" id="__codelineno-18-7" name="__codelineno-18-7"></a>git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span>old-name<span class="w"> </span>new-name
+<a href="#__codelineno-18-8" id="__codelineno-18-8" name="__codelineno-18-8"></a>
+<a href="#__codelineno-18-9" id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="c1"># Delete the old-name remote branch and push the new-name local branch.</span>
+<a href="#__codelineno-18-10" id="__codelineno-18-10" name="__codelineno-18-10"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>:old-name<span class="w"> </span>new-name
+<a href="#__codelineno-18-11" id="__codelineno-18-11" name="__codelineno-18-11"></a>
+<a href="#__codelineno-18-12" id="__codelineno-18-12" name="__codelineno-18-12"></a><span class="c1"># Reset the upstream branch for the new-name local branch.</span>
+<a href="#__codelineno-18-13" id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="c1"># Switch to the branch and then:</span>
+<a href="#__codelineno-18-14" id="__codelineno-18-14" name="__codelineno-18-14"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>-u<span class="w"> </span>new-name
+</code></pre></div>
+<h5 id="revert-to-specific-commit">Revert to specific commit</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>git<span class="w"> </span>revert<span class="w"> </span>a66b89f
+</code></pre></div>
+<h5 id="delete-last-pushed-commit">Delete last pushed commit</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>origin<span class="w"> </span>last_known_good_commit:branch_name
+</code></pre></div>
+<h5 id="start-ssh-agent-on-linux">Start SSH agent on Linux</h5>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="nb">eval</span><span class="w"> </span><span class="k">$(</span>ssh-agent<span class="k">)</span>
+<a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a>ssh-add<span class="w"> </span>~/.ssh/github/github-key
+</code></pre></div>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-03-30T18:32:55+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-03-30</span>
+<br/>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-03-30T18:32:55+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-03-30</span>
+</small>
+</div>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023-&gt; Protoni. Contant at toni [@] protoni.fi
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.19047be9.min.js"></script>
+<script src="../../js/timeago.min.js"></script>
+<script src="../../js/timeago_mkdocs_material.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

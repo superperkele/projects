@@ -1,9 +1,18 @@
 site_name: Protoni's site
 site_url: https://protoni.github.io/projects/
 
+repo_url: https://github.com/protoni/projects
+repo_name: protoni/projects
+edit_uri: edit/main/docs/
+
 # Set material theme settings
 theme:
   name: material
+  
+#  icon:
+#    edit: material/pencil 
+#    view: material/eye
+
 #  logo: assets/images/ohYouDogRound.PNG
 #  favicon: assets/images/ohYouDogRound.PNG
   features:
@@ -19,17 +28,18 @@ theme:
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
+    - content.action.edit
   language: en
   palette:
     - scheme: default
       toggle:
-        icon: material/toggle-switch-off-outline 
+        icon: material/brightness-7
         name: Switch to dark mode
       primary: indigo
       accent: purple 
     - scheme: slate 
       toggle:
-        icon: material/toggle-switch
+        icon: material/brightness-4
         name: Switch to light mode    
       primary: indigo
       accent: lime

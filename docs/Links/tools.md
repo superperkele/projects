@@ -24,31 +24,11 @@
 ##### Dev hints
 <https://devhints.io/>
 
-##### Math symbol list
-<https://www.rapidtables.com/math/symbols/Basic_Math_Symbols.html#lnkset>
-
-##### Math graph calculator
-<https://www.desmos.com/calculator>
-
-##### Math solvers
-<https://www.symbolab.com/>
-
-<https://www.wolframalpha.com/>
-
-##### Binary-decimal-hexadecimal converter
-<https://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html>
-
-##### Free 3D models
-<https://free3d.com/>
-
 ##### Explain linux shell commands
 <https://explainshell.com/>
 
 ##### Virtual x86 emulator
 <https://copy.sh/v86/>
-
-##### Electronics circuit simulator
-<https://www.falstad.com/circuit/>
 
 ##### Benchmark websites
 <https://pagespeed.web.dev/?hl=fi>
@@ -63,10 +43,7 @@
 <https://cloudconvert.com/webp-to-png>
 
 ##### Timezone converter
-<https://www.worldtimebuddy.com/est-to-gmt-converter>
-
-##### Emoji unicode tables
-<https://apps.timwhitlock.info/emoji/tables/unicode>
+<https://www.worldtimebuddy.com/>
 
 ##### Screenshot entire web pages
 <https://screenshot.guru/>
@@ -76,15 +53,6 @@
 
 ##### Terminal session recorder
 <https://asciinema.org/>
-
-##### Lots of icons
-<https://iconduck.com/>
-
-##### Voltage divider calculator
-<https://ohmslawcalculator.com/voltage-divider-calculator>
-
-##### LED resistor calculator
-<https://ledcalculator.net/>
 
 ##### MP4 compressor
 <https://www.xconvert.com/compress-mp4>
@@ -97,3 +65,39 @@
 
 ##### Windows sysadmin tools
 <https://learn.microsoft.com/en-us/sysinternals/downloads/>
+
+##### Privacy & security settings generator
+<https://privacy.sexy/>
+
+##### Tampere bus location tracker
+<https://nyssetutka.fi/>
+
+## Electronics
+
+##### Voltage divider calculator
+<https://ohmslawcalculator.com/voltage-divider-calculator>
+
+##### Electronics circuit simulator
+<https://www.falstad.com/circuit/>
+
+##### LED resistor calculator
+<https://ledcalculator.net/>
+
+##### Lots of electronics related calculators
+<http://www.learningaboutelectronics.com/Calculators/>
+
+## Math
+
+##### Math symbol list
+<https://www.rapidtables.com/math/symbols/Basic_Math_Symbols.html#lnkset>
+
+##### Math graph calculator
+<https://www.desmos.com/calculator>
+
+##### Math solvers
+<https://www.symbolab.com/>
+
+<https://www.wolframalpha.com/>
+
+##### Binary-decimal-hexadecimal converter
+<https://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html>
